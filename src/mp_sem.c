@@ -7,6 +7,8 @@
  * unsupported (ENOSYS), which mirrors what the platform itself
  * cannot do.
  */
+#include "metaposix.h"
+
 #include <semaphore.h>
 
 #if !MP_HAS_WORKING_SEM_INIT

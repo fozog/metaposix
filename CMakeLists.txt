@@ -43,11 +43,6 @@ target_include_directories(metaposix BEFORE PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-    # glibc: expose GNU/POSIX extensions (ppoll, memmem, ...)
-    target_compile_definitions(metaposix PUBLIC _GNU_SOURCE)
-endif()
-
 find_package(Threads REQUIRED)
 target_link_libraries(metaposix PUBLIC Threads::Threads)
 

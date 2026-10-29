@@ -7,6 +7,8 @@
  * slip in between.  MP_HAS_PPOLL == 0 lets callers know they are on
  * the emulated path.
  */
+#include "metaposix.h"
+
 #include <poll.h>
 
 #if !MP_HAS_PPOLL

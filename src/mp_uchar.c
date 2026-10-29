@@ -6,6 +6,8 @@
  * on macOS, Linux and the BSDs (NOT on Windows, where wchar_t is
  * UTF-16 — that port would need real surrogate handling).
  */
+#include "metaposix.h"
+
 #include <uchar.h>
 
 #if MP_UCHAR_SHIMMED

@@ -6,6 +6,8 @@
  * and exactly one waiter per cycle receives
  * PTHREAD_BARRIER_SERIAL_THREAD, as POSIX requires.
  */
+#include "metaposix.h"
+
 #include <pthread.h>
 
 #if !MP_HAS_PTHREAD_BARRIER

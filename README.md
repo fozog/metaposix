@@ -16,6 +16,27 @@ implementation or a conformance certification.
 Generated files belong in `build/`, not beside source files. CMake rejects
 in-source builds.
 
+## Using the portability layer
+
+Add the library's `include/` directory before system include paths, link
+`libmetaposix.a` and its platform dependencies, and make this the first include
+in each C source file:
+
+```c
+#include "metaposix.h"
+
+#include <stdlib.h>
+#include <pthread.h>
+```
+
+Keep the normal headers for the APIs you use. `metaposix.h` centralizes
+`_POSIX_C_SOURCE`, Darwin extensions, and Linux GNU extensions; applications
+should not duplicate those definitions or need OS-specific preambles.
+It must appear before any system header, including headers included
+indirectly or through precompiled headers. An explicitly configured
+`_POSIX_C_SOURCE` older than 200809L is rejected.
+This feature-test baseline does not claim complete POSIX.1-2024 support.
+
 ## Prerequisites
 
 - CMake 3.16 or newer.

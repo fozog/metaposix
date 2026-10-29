@@ -6,6 +6,8 @@
  * the interposed <string.h> keeps the native versions and this file
  * compiles to nothing.
  */
+#include "metaposix.h"
+
 #include <string.h>
 
 #if !MP_HAS_STRLCPY

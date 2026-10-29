@@ -1,7 +1,4 @@
-#define _POSIX_C_SOURCE 200809L
-#if defined(__APPLE__)
-#define _DARWIN_C_SOURCE
-#endif
+#include "metaposix.h"
 
 #include <errno.h>
 #include <stdio.h>
@@ -9,7 +6,6 @@
 #include <string.h>
 #include <unistd.h>
 
-#include <metaposix/mp_features.h>
 #if MP_HAS_POSIX_AIO
 #include <aio.h>
 #endif

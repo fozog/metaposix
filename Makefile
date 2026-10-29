@@ -14,7 +14,6 @@ C23_BITINT128 := $(shell printf '' | $(CC) $(C23FLAGS) -x c -dM -E - 2>/dev/null
 
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Linux)
-CPPFLAGS += -D_GNU_SOURCE
 LDLIBS   += -lrt
 endif
 
