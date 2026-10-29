@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "macOS: Debug metaposix validation",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/debug/mp_tests",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopOnEntry": false,
+            "preLaunchTask": "metaposix: build debug"
+        }
+    ]
+}
